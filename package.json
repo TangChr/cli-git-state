@@ -1,0 +1,18 @@
+{
+  "name": "cli-git-state",
+  "version": "1.0.0",
+  "description": "Blaagh",
+  "main": "index.js",
+  "scripts": {
+    "test": "standard | snazzy"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "git-state": "^4.0.0"
+  },
+  "devDependencies": {
+    "snazzy": "^7.0.0",
+    "standard": "^10.0.2"
+  }
+}
