@@ -1,15 +1,24 @@
-var gitState = require('git-state')
+#!/usr/bin/env node
+const gitState = require('git-state')
+const chalk = require('chalk')
 
-var path = '.'
+const path = '.'
 
 gitState.isGit(path, function (exists) {
   if (!exists) return
   gitState.check(path, function (err, result) {
     if (err) throw err
-    console.log(result) // => { branch: 'master',
-                        //      ahead: 0,
-                        //      dirty: 9,
-                        //      untracked: 1,
-                        //      stashes: 0 }
+    if (result.branch != null) {
+      console.log(chalk.green('Branch: ' + result.branch))
+    }
+    if (result.ahead != null && result.ahead > 0) {
+      console.log('Commits ahead: ' + result.ahead)
+    }
+    if (result.dirty != null && result.dirty > 0) {
+      console.log(chalk.red('Modified files: ' + result.dirty))
+    }
+    if (result.untracked != null && result.untracked > 0) {
+      console.log(chalk.yellow('Untracked files: ' + result.untracked))
+    }
   })
 })

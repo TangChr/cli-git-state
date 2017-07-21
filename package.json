@@ -3,16 +3,24 @@
   "version": "1.0.0",
   "description": "Blaagh",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TangChr/cli-git-state.git"
+  },
+  "author": "Christian Tang <christian@tcdev.dk> (http://seaweed.dk)",
   "scripts": {
     "test": "standard | snazzy"
   },
-  "author": "",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^2.0.1",
     "git-state": "^4.0.0"
   },
   "devDependencies": {
     "snazzy": "^7.0.0",
     "standard": "^10.0.2"
+  },
+  "bin": {
+    "git-state": "./index.js"
   }
 }
